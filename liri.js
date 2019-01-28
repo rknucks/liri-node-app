@@ -1,17 +1,17 @@
 require("dotenv").config();
 
 // Importing files 
-var fs = require("fs");
-var keys = require('./keys.js');
-var request = require('request');
-var moment = require('moment');
+const fs = require("fs");
+const keys = require('./keys.js');
+const request = require('request');
+const moment = require('moment');
     moment().format();
-var Spotify = require('node-spotify-api');
+const Spotify = require('node-spotify-api');
 
 
 
-var liriDo = process.argv[2];
-var input = process.argv[3];
+const liriDo = process.argv[2];
+const input = process.argv[3];
 
 function commands (liriDo, input){
 switch (liriDo) {
@@ -42,24 +42,24 @@ function concertThis(artist) {
     //If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
         if (!artist) {
             artist = "mr nobody";
-        }
+        }  else {
             
     // Request to the bands-in-town API for specific artist
-    var queryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+    const queryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
     
     console.log(queryUrl);
-
+        }
     
     request(queryUrl, function(error, response, body) {
 
         // If no errors (if it works)
         if (!error && response.statusCode === 200) {
-            var artistObject = JSON.parse(body);
+            
 
             //This is data that shows in the terminal
-            var artistObject = JSON.parse(body)[0];
-            var artistResult  = 
+            let artistObject = JSON.parse(body);
+            let artistResult  = 
             "------------------------------ begin ------------------------------" + "\r\n" +
             
             "Venue name " + artistObject.venue.name+"\r\n"+
@@ -73,11 +73,11 @@ function concertThis(artist) {
 	//Spotify-this-song function
 function getSong(songName) {
     
-    var spotify = new Spotify(keys.spotify);
+    let spotify = new Spotify(keys.spotify);
     
     //If no song is provided, use "The Sign" 
         if (!songName) {
-            input = "The Sign";
+            songName = "The Sign";
         };        
 
         console.log(songName);
@@ -121,10 +121,10 @@ function movieThis(movieName) {
 
         // If no errors (if it works)
         if (!error && response.statusCode === 200) {
-            var movieObject = JSON.parse(body);
+            let movieObject = JSON.parse(body);
 
             //This is data that shows in the terminal
-            var movieResults = 
+            let movieResults = 
             "------------------------------ begin ------------------------------" + "\r\n" +
             "Title: " + movieObject.Title+"\r\n"+
             "Year: " + movieObject.Year+"\r\n"+
