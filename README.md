@@ -21,13 +21,13 @@ then, type the command you wish to use.  There are 4 commands to choose from:
    ![Concert](concert.png)
    2.  Search Spotify for a specific song using the command:  spotify-this-song "your song choice"
    #### Example
-   ![Song](https://raw.githubusercontent.com/rknucks/liri-node-app/assets/song.png)
+   ![Song](/assets/song.png)
    3.  Search OMDB for information regarding a specific movie using the command:  movie-this "your movie choice"
    #### Example
-   ![Movie](https://raw.githubusercontent.com/rknucks/liri-node-app/assets/movie.png)
+   ![Movie](/assets/movie.png)
    4. The app will execute commands in a file called "random.txt" using the command: do-what-it-says 
    #### Example
-   ![Random](https://raw.githubusercontent.com/rknucks/liri-node-app/assets/whatever.png)
+   ![Random](/assets/whatever.png)
   
    
    
