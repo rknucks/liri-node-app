@@ -37,19 +37,19 @@ switch (liriDo) {
     }
 }
 
-//movie-this function... OMDB api
-function concertThis(artist) {
-    //If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
-        if (!artist) {
-            artist = "mr nobody";
-        }  else {
+//concert-this function... bands in town api
+function concertThis(band) {
+    //If the user doesn't type a movie in, the console will show information for the movie 'Mr. Nobody.'
+        if (!band) {
+           console.log("No band or artist was entered.  Please enetr a band name");
+        }  else 
             
     // Request to the bands-in-town API for specific artist
-    const queryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
+    var queryUrl = "https://rest.bandsintown.com/artists/" + band + "/events?app_id=codingbootcamp";
 
     
     console.log(queryUrl);
-        }
+        
     
     request(queryUrl, function(error, response, body) {
 
@@ -57,7 +57,7 @@ function concertThis(artist) {
         if (!error && response.statusCode === 200) {
             
 
-            //This is data that shows in the terminal
+            
             let artistObject = JSON.parse(body);
             let artistResult  = 
             "------------------------------ begin ------------------------------" + "\r\n" +
@@ -82,7 +82,7 @@ function getSong(songName) {
 
         console.log(songName);
 
-        //Callback to spotify to search for song name
+       
         spotify.search({ type: 'track', query: songName, limit: 10  }, function(err, data) {
             if (err) {
                 return console.log('Error occurred: ' + err);
