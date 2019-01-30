@@ -39,10 +39,11 @@ switch (liriDo) {
 
 //concert-this function... bands in town api
 function concertThis(band) {
+
     //If the user doesn't type a movie in, the console will show information for the movie 'Mr. Nobody.'
         if (!band) {
            console.log("No band or artist was entered.  Please enetr a band name");
-        }  else 
+        }  else {
             
     // Request to the bands-in-town API for specific artist
     var queryUrl = "https://rest.bandsintown.com/artists/" + band + "/events?app_id=codingbootcamp";
@@ -57,19 +58,20 @@ function concertThis(band) {
         if (!error && response.statusCode === 200) {
             
 
-            
             let artistObject = JSON.parse(body);
+            //console.log(artistObject[0]);
             let artistResult  = 
             "------------------------------ begin ------------------------------" + "\r\n" +
             
-            "Venue name " + artistObject.venue.name+"\r\n"+
-            "Venue location " + artistObject.venue.city+"\r\n"+
-            "Date of Event " +  moment(artistObject.datetime).format("MM/DD/YYYY")+"\r\n"+
+            "Venue name " + artistObject[0].venue.name+"\r\n"+
+            "Venue location " + artistObject[0].venue.city+"\r\n"+
+            "Date of Event " +  moment(artistObject[0].datetime).format("MM/DD/YYYY")+"\r\n"+
             "------------------------------ end ------------------------------" + "\r\n";
             console.log(artistResult);
         };
     });
     };
+};
 	//Spotify-this-song function
 function getSong(songName) {
     
