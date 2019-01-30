@@ -12,7 +12,7 @@ The app is run from the console.
 
 ## Instructions
 
-From Git Bash (Windows) or terminal (Mac/Linux) go to:  
+From Git Bash (Windows) or terminal (Mac/Linux) go to:  https://rknucks.github.io/liri-node-app/
 ### step 1:  
 type: node liri.js
 then, type the command you wish to use.  There are 4 commands to choose from:
