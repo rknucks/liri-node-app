@@ -14,6 +14,7 @@ The app is run from the console.
 
 Go to:  https://rknucks.github.io/liri-node-app/
 ### step 1:  
+From the console:
 type: node liri.js
 then, type the command you wish to use.  There are 4 commands to choose from:
    1.  Search bands-in-town for concert info using the command: concert-this "your chosen artist/band"  (remember to use quotes around the        name if it is more than one word).
