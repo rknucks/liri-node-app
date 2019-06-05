@@ -19,7 +19,7 @@ type: node liri.js
 then, type the command you wish to use.  There are 4 commands to choose from:
    1.  Search bands-in-town for concert info using the command: concert-this "your chosen artist/band"  (remember to use quotes around the        name if it is more than one word).
    #### Example
-   ![Concert](/assets/Concert.png)
+   ![Concert](/assets/show.png)
    2.  Search Spotify for a specific song using the command:  spotify-this-song "your song choice"
    #### Example
    ![Song](/assets/song.png)
